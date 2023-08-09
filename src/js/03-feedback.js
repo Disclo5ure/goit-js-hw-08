@@ -26,11 +26,11 @@ form.addEventListener('input', e => {
 });
 
 form.addEventListener('submit', e => {
+  e.preventDefault();
   const {
     elements: { email, message },
   } = e.currentTarget;
   console.log({ email: email.value, message: message.value });
   localStorage.clear();
-  email.reset();
-  message.reset();
+  e.currentTarget.reset();
 });
