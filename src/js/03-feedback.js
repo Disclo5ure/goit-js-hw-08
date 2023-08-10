@@ -30,6 +30,7 @@ form.addEventListener('submit', e => {
   const {
     elements: { email, message },
   } = e.currentTarget;
+  if (!(email.value && message.value)) return;
   console.log({ email: email.value, message: message.value });
   localStorage.clear();
   e.currentTarget.reset();
